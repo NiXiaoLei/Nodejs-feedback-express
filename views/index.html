@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>留言本</title>
+    <!-- 注意: 在服务器中，文件中的路径就不要去写相对路径了
+         因为这个时候所有的资源都是通过url 标识来获取的
+         我的服务器开放了 /public/ 目录
+         所以这里的请求路径都写成:/public/xxx
+         / 在这里就是 url 根路径的意思。
+        浏览器在真正发请求的时候会把 http://127.0.0.1:3000 拼上 
+    
+    
+        
+    -->
+    <link rel="stylesheet" href="./public/lib/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="header container">
+        <div class="page-header">
+            <h1>&nbsp;Node 留言板小实战 <small>Subtext for header</small></h1>
+            &nbsp;&nbsp;&nbsp;<a class="btn btn-success" href="/post">发表留言</a>
+        </div>
+        <hr>
+        <div class="comments container">
+            <ul class="list-group">
+                {{each comments}}
+                <li class="list-group-item">{{$value.name}}说:{{$value.message}}<span style="float:right">{{$value.dateTime}}</span></li>
+               {{/each}}
+            </ul>
+    </div>
+</div>
+</body>
+<script>
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="./public/lib/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="header container">
+        <div class="page-header">
+            <h1>
+                <a href="/">首页</a>
+                <small>发表评论</small>
+            </h1>
+        </div>
+    </div>
+    <div class="comments container">
+      <!-- 
+          默认提交行为
+          表单异步提交
+          
+          action 就是表单提交的地址
+       -->
+        <form action="/post" method="post">
+            <div class="form-group">
+                <label for="input_name">你的大名字</label>
+                <input type="text" name="name" class="form-control" required minlength="2" maxlength="10" id="input_name" placeholder="请输入你的姓名">
+
+            </div>
+            <div class="form-group">
+                <label for="textarea_message">文本框</label>
+                <textarea class="form-control" name="message" id="textarea_message" required minlength="5" maxlength="20" rows="8"></textarea>
+            </div>
+            <button type="submit" class="btn btn-outline-primary">发表</button>
+        </form>
+    </div>
+</body>
+<script>
+</script>
+</html>
